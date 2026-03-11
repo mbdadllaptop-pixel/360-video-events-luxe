@@ -137,7 +137,7 @@ const App = () => {
             <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '32px' }}>Let's Work <br /> <span className="gold-gradient">Together</span></h2>
             <p style={{ color: 'hsl(var(--text-muted))', marginBottom: '48px', fontSize: '1.1rem', lineHeight: 1.8 }}>Connect with us to receive a bespoke proposal for your next high-profile event.</p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}><Mail size={20} style={{ color: 'hsl(var(--primary))' }} /> your360event@hotmail.com</div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}><Mail size={20} style={{ color: 'hsl(var(--primary))' }} /> your360videoevent@hotmail.com</div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}><Phone size={20} style={{ color: 'hsl(var(--primary))' }} /> 07931720209</div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}><MapPin size={20} style={{ color: 'hsl(var(--primary))' }} /> Mayfair, London</div>
             </div>
