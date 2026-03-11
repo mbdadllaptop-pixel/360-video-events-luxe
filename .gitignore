@@ -1,0 +1,20 @@
+# node_modules
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Editor folders
+.vscode/
+.idea/
+.agents/
+.system_generated/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS files
+.DS_Store
+Thumbs.db
