@@ -1,5 +1,5 @@
-import React from 'react';
-import { ShoppingCart, Camera, Video, ArrowRight, Star, Clock, Share2, Zap, PlayCircle, Quote, MapPin, Mail, Phone, ExternalLink } from 'lucide-react';
+import { useState } from 'react';
+import { ShoppingCart, Camera, Video, ArrowRight, Star, Clock, Share2, Zap, PlayCircle, Quote, MapPin, Mail, Phone, ExternalLink, ChevronDown, ChevronUp } from 'lucide-react';
 
 const App = () => {
   const assets = {
@@ -11,6 +11,52 @@ const App = () => {
       "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&q=80&w=1200"
     ]
   };
+
+  const [activeFaq, setActiveFaq] = useState(null);
+
+  const faqItems = [
+    {
+      question: "A Bit About Us",
+      answer: "Our 360 video booth captures videos, pictures and boomerangs from every angle! Guests step onto the branded platform and the slow-motion camera arm circles them – recording their moment in the spotlight, complete with your branding."
+    },
+    {
+      question: "What’s Included in the Basic Package",
+      answer: (
+        <ul style={{ paddingLeft: '20px' }}>
+          <li>360 Video booth, 2 Attendants and Lighting</li>
+          <li>Unlimited videos - add your brand or personal message/logo</li>
+          <li>Video sharing via email/ mobile and cloud optional</li>
+          <li>1 to 3 hour hire (set up & take down time not included)</li>
+          <li>Email transfer of all videos taken at your event</li>
+          <li>Delivery, set up & take down within London and surrounding area</li>
+        </ul>
+      )
+    },
+    {
+      question: "What’s Optional",
+      answer: (
+        <ul style={{ paddingLeft: '20px' }}>
+          <li>Special effects & Props/ Inflatables</li>
+          <li>Online gallery with photos from your event</li>
+          <li>Custom branded backdrop & platform</li>
+          <li>Professionally edited video reel</li>
+          <li>4k/6k UHD professional capture</li>
+        </ul>
+      )
+    },
+    {
+      question: "What We Need",
+      answer: (
+        <ul style={{ paddingLeft: '20px' }}>
+          <li>Cubic space of 3.5M (L) x 3.5M (W) x 2.1M (H)</li>
+          <li>Access to a 240V mains socket & Wi-Fi</li>
+          <li>Access to your venue 30 minutes prior to hiring for set up</li>
+          <li>£50 non-refundable deposit to secure your date (full payment 24h before)</li>
+          <li>Cover from rain (if positioned outdoors)</li>
+        </ul>
+      )
+    }
+  ];
 
   return (
     <div className="site-wrapper">
@@ -129,6 +175,43 @@ const App = () => {
       </section>
 
 
+      {/* FAQ Section */}
+      <section id="faq" style={{ background: 'hsla(var(--background), 0.3)' }}>
+        <div className="container" style={{ maxWidth: '800px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+            <span className="section-subtitle">Common Inquiries</span>
+            <h2 className="section-title">Frequently Asked Questions</h2>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            {faqItems.map((item, index) => (
+              <div key={index} className="glass" style={{ overflow: 'hidden', transition: 'all 0.3s ease' }}>
+                <button 
+                  onClick={() => setActiveFaq(activeFaq === index ? null : index)}
+                  style={{ 
+                    width: '100%', padding: '24px 32px', display: 'flex', justifyContent: 'space-between', 
+                    alignItems: 'center', background: 'transparent', border: 'none', color: '#fff', 
+                    cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: '1.1rem' 
+                  }}
+                >
+                  {item.question}
+                  {activeFaq === index ? <ChevronUp className="gold-text" size={20} /> : <ChevronDown size={20} />}
+                </button>
+                <div style={{ 
+                  maxHeight: activeFaq === index ? '500px' : '0', 
+                  opacity: activeFaq === index ? 1 : 0,
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)', 
+                  padding: activeFaq === index ? '0 32px 32px' : '0 32px',
+                  color: 'hsl(var(--text-muted))',
+                  lineHeight: 1.6
+                }}>
+                  {item.answer}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="booking" style={{ background: 'hsl(var(--background))' }}>
         <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '60px', alignItems: 'start' }}>
@@ -202,8 +285,6 @@ const App = () => {
           <img src={assets.logo} alt="Logo" style={{ height: '50px', marginBottom: '32px' }} />
           <div style={{ display: 'flex', gap: '32px', justifyContent: 'center', marginBottom: '40px', color: 'hsl(var(--text-muted))', fontSize: '0.8rem', letterSpacing: '2px' }}>
             <a href="https://www.instagram.com/your360videoevents/?hl=en" target="_blank" rel="noopener noreferrer" className="hover-gold">INSTAGRAM</a>
-            <a href="#" className="hover-gold">LINKEDIN</a>
-            <a href="#" className="hover-gold">VIMEO</a>
           </div>
           <div style={{ color: 'hsl(var(--text-muted))', fontSize: '0.75rem', letterSpacing: '1px' }}>
             © {new Date().getFullYear()} 360 VIDEO EVENTS LTD. LONDON, UK.
