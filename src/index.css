@@ -241,6 +241,71 @@ section {
   transform: scale(1.05);
 }
 
-.hover-gold:hover {
-  color: hsl(var(--primary));
+/* Navigation Styles */
+.main-nav {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 48px);
+  max-width: 1200px;
+  z-index: 1000;
+  padding: 12px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.nav-book-btn {
+  padding: 10px 24px;
+  font-size: 0.75rem;
+}
+
+.nav-logo-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  .main-nav {
+    padding: 10px 16px;
+    width: calc(100% - 20px);
+    top: 16px;
+    gap: 12px;
+  }
+  
+  .nav-links {
+    gap: 12px;
+    font-size: 0.65rem;
+    letter-spacing: 0.05em;
+  }
+
+  .nav-book-btn {
+    padding: 8px 16px;
+    font-size: 0.65rem;
+    white-space: nowrap;
+  }
+
+  .nav-logo {
+    height: 30px;
+  }
+
+  .hero-headline {
+    font-size: 2.5rem;
+  }
+
+  section {
+    padding: 80px 0;
+  }
+}
+

@@ -61,21 +61,15 @@ const App = () => {
   return (
     <div className="site-wrapper">
       {/* Navigation */}
-      <nav className="glass" style={{
-        position: 'fixed', top: '24px', left: '50%', transform: 'translateX(-50%)',
-        width: 'calc(100% - 48px)', maxWidth: '1200px',
-        zIndex: 1000, padding: '12px 32px',
-        display: 'flex', justifyContent: 'space-between', alignItems: 'center'
-      }}>
-        <div style={{ display: 'flex', alignItems: 'center' }}>
+      <nav className="glass main-nav">
+        <div className="nav-logo-container">
           <img src={assets.logo} alt="360 Video Events Logo" className="nav-logo" />
         </div>
-        <div className="nav-links" style={{ display: 'flex', gap: '20px', fontWeight: 600, fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+        <div className="nav-links">
           <a href="#services" className="hover-gold">Services</a>
           <a href="https://www.instagram.com/your360videoevents/?hl=en" target="_blank" rel="noopener noreferrer" className="hover-gold">Portfolio</a>
-          <a href="#booking" className="hover-gold">Contact</a>
         </div>
-        <button onClick={() => document.getElementById('booking').scrollIntoView({ behavior: 'smooth' })} className="btn-primary" style={{ padding: '10px 24px', fontSize: '0.75rem' }}>Book Now</button>
+        <button onClick={() => document.getElementById('booking').scrollIntoView({ behavior: 'smooth' })} className="btn-primary nav-book-btn">Book Now</button>
       </nav>
 
       {/* Hero Section */}
@@ -92,7 +86,7 @@ const App = () => {
             of 360 Experiences
           </h1>
           <p className="hero-subheadline">
-            Bespoke Cinematic Activations • Global Support
+            Bespoke Cinematic Activations • Photobooth specialists
           </p>
           <div style={{ display: 'flex', justifyContent: 'center' }}>
             <button onClick={() => document.getElementById('booking').scrollIntoView({ behavior: 'smooth' })} className="btn-primary" style={{ padding: '20px 60px' }}>View Packages</button>
